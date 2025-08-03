@@ -1,0 +1,11 @@
+import mongoose from "mongoose";
+
+export const connectToMongoDB = async () => {
+  try {
+    await mongoose.connect('mongodb://127.0.0.1:27017/backend')
+    console.log("conectado!!!!!")
+  }catch(e){
+    console.error(e)
+    process.exit(1)
+  }
+}
