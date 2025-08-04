@@ -67,14 +67,14 @@ router.delete("/:uid", async (req, res) => {
   const uid = req.params.uid;
 
   try {
-    const result = await studentModel.deleteOne({_id: uid});
+    const result = await studentModel.deleteOne({ _id: uid });
     if (!student) {
       throw new Error("Student not found!");
     }
     res.status(204).send({
       status: "success",
-      payload: result
-    })
+      payload: result,
+    });
   } catch (error) {
     res.status(400).send({
       status: "error",
